@@ -16,7 +16,6 @@
                  [org.slf4j/slf4j-nop       "1.7.21"     :scope "test"]
                  [org.clojure/clojurescript "1.9.293"]
                  [reagent                   "0.6.0"]
-                 [cljsjs/react-dom          "15.4.0-0"]
                  [secretary                 "1.2.3"]])
 
 (require
@@ -40,7 +39,7 @@
         (build)))
 
 (deftask production []
-  (task-options! cljs {:optimizations :advanced}                       
+  (task-options! cljs {:optimizations :advanced}
                  sass {:source-map false :output-style :compressed})
   identity)
 
