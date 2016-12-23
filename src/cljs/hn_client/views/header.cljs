@@ -4,7 +4,7 @@
 (defn- github-link
   []
   [:a.github-link
-   {:href "https://github.com/armed/elm-hn-client"
+   {:href "https://github.com/armed/cljs-hn-client"
     :title "Open Github repo"
     :target "_blank"}
    (fa-icon "github")])
