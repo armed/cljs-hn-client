@@ -1,0 +1,6 @@
+*.DS_Store
+target
+.nrepl-*
+out
+node_modules
+!.gitignore

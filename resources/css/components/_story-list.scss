@@ -1,0 +1,105 @@
+.story-list {
+  // margin-top: .9em;
+  min-width: 300px;
+  width: 300px;
+  padding-right: 10px;
+  height: 100%;
+  font-size: 1em;
+
+  @media screen and (max-device-width: 480px),
+         screen and (max-width: 700px) {
+    .story:not(:empty) ~ & {
+      display: none;
+    }
+  }
+
+  .story:empty ~ & {
+    flex-grow: 1;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: auto;
+    font-size: 1.2em;
+
+    & > .header {
+      top: 0;
+      left: 0;
+      right: 0;
+      max-width: none;
+      width: auto;
+      line-height: 1.5;
+    }
+  }
+
+  .links {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+
+    .story-link {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 5px 10px 5px;
+      color: grey;
+      border-left: 3px solid $hnbg;
+      border-bottom: 1px solid #ddd;
+
+      &.opened {
+        color: $hoverColor;
+        border-left-color: $hnorange;
+      }
+
+      .story-title {
+        display: flex;
+        flex-direction: column;
+
+        .title-text {
+          cursor: pointer;
+          &:hover {
+            color: $hoverColor;
+          }
+        }
+
+        .url {
+          cursor: pointer;
+          margin-top: 4px;
+          font-size: .7em;
+          text-overflow: ellipsis;
+          max-width: 140px;
+          white-space: nowrap;
+          overflow: hidden;
+
+          a {
+            text-decoration: none;
+            color: grey;
+            &:hover {
+              color: $hoverColor;
+            }
+          }
+        }
+      }
+
+      .story-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        color: #777;
+        margin-left: 3px;
+        min-width: 45px;
+        font-size: .7em;
+
+        .story-score, .story-comments, .story-time {
+          color: #bbb;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          width: 100%;
+          i {
+            margin-right: 2px;
+          }
+        }
+      }
+    }
+  }
+}
+//

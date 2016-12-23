@@ -1,0 +1,40 @@
+@import 'comment';
+
+.story {
+  // margin-top: 1em;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  flex-grow: 2;
+  &:empty {
+    display: none;
+  }
+
+  .story-text {
+    margin: 5px;
+    word-wrap: break-word;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .story-comments {
+    padding: 5px;
+    overflow-x: hidden;
+
+    &:empty:before {
+      color: #aaa;
+      content: "No comments";
+    }
+  }
+
+  .story-comments, .story-text {
+    * {
+      word-wrap: break-word;
+    }
+    a {
+      text-overflow: ellipsis;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.comment {
+  margin-top: 5px;
+  margin-bottom: 15px;
+
+  &:empty {
+    color: #aaa;
+    &:before {
+      content: "Loading...";
+    }
+  }
+
+  .comment-header {
+    display: flex;
+    padding: 4px;
+    cursor: pointer;
+    margin-bottom: 0;
+    color: grey;
+    align-items: baseline;
+    font-family: monospace;
+
+    .nickname {
+      font-weight: normal;
+    }
+
+    .arrow {
+      margin-right: 5px;
+      &:before {
+        content: "[-]";
+      }
+    }
+
+    .time {
+      margin-left: 5px;
+      &:after {
+        content: " ago";
+      }
+    }
+  }
+
+  .comment-body {
+    margin-bottom: 4px;
+    padding-left: 4px;
+  }
+
+  .comment-kids {
+    margin-left: 20px;
+  }
+
+  input[type="checkbox"]:checked ~ .comment-header > .arrow:before {
+    content: "[+]";
+  }
+
+  input[type="checkbox"]:checked ~ .comment-body,
+  input[type="checkbox"]:checked ~ .comment-kids {
+    display: none;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+}

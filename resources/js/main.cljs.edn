@@ -1,0 +1,14 @@
+{:require  [hn-client.core]
+ :init-fns [hn-client.core/main]
+ :compiler-options {:asset-path "js/main.out"
+                    :foreign-libs
+                    [{:file "node_modules/firebase/firebase-app.js"
+                      :file-min "node_modules/firebase/firebase-app.js"
+                      :provides ["firebase.app"]}
+                     {:file "node_modules/firebase/firebase-database.js"
+                      :file-min "node_modules/firebase/firebase-database.js"
+                      :requires ["firebase.app"]
+                      :provides ["firebase.database"]}]
+                    :externs
+                    ["node_modules/firebase/externs/firebase-app-externs.js"
+                     "node_modules/firebase/externs/firebase-database-externs.js"]}}
